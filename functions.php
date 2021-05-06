@@ -97,3 +97,45 @@ function card_query_post_type($query) {
 
 add_filter('pre_get_posts', 'card_query_post_type');
 
+
+
+//show cards on home 
+
+function the_home_cards(){
+
+	$args_cat = [
+	    'orderby' => 'name',
+	    'order' => 'ASC',
+	];
+
+	$categories = get_categories($args_cat);
+
+if (!empty($categories)):
+    foreach ($categories as $category):
+	$html = '';
+	 $args = array(
+      'posts_per_page' => -1,
+      'post_type'   => 'card', 
+      'post_status' => 'publish', 
+      'nopaging' => true,
+      'cat' => $category->term_id,
+                    );
+	  $the_query = new WP_Query( $args );
+	                    if( $the_query->have_posts() ): 
+	                      while ( $the_query->have_posts() ) : $the_query->the_post();
+	                       //DO YOUR THING	
+	                         if($the_query->current_post == 0) {
+	                         	$html .= "<div class='col-md-4'><h2>{$category->slug}</h2>";
+	                         }                    	
+	                         $title = get_the_title();
+	                         $link = get_the_permalink();
+	                        $html .= "<div class='home-card-title'><a href='{$link}'>{$title}</a></div>";
+	                         endwhile;
+	                  endif;
+	            wp_reset_query();  // Restore global post data stomped by the_post().
+	   echo $html . '</div>';
+	   wp_reset_postdata(); // reset the query 
+    endforeach;
+endif;
+
+}
