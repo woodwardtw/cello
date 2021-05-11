@@ -168,21 +168,21 @@ function register_updates_meta_fields(){
       'single' => true,
       'show_in_rest' => true,
     ]);
+       register_meta('post', 'flags', [
+      'type' => 'string',
+      'description' => 'flags',
+      'single' => true,
+      'show_in_rest' => true,
+    ]);
 
-    register_meta( 'update', 'flags', array(
-        'type' => 'string',
-        'description' => 'flags',
-        'single' => true,
-        'show_in_rest' => true
-    ));
+      register_meta('post', 'else', [
+      'type' => 'string',
+      'description' => 'other',
+      'single' => true,
+      'show_in_rest' => true,
+    ]);
 
-    register_meta( 'update', 'else', array(
-        'type' => 'string',
-        'description' => 'other information',
-        'single' => true,
-        'show_in_rest' => true
-    ));
-
+ 
 }
 
 //show custom fields
