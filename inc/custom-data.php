@@ -141,3 +141,13 @@ function create_update_cpt() {
   $wp_rewrite->flush_rules();
 }
 add_action( 'init', 'create_update_cpt', 0 );
+
+
+function course_update_rest_route_for_post( $route, $post ) {
+    if ( $post->post_type === 'update' ) {
+        $route = '/wp/v2/update/' . $post->ID;
+    }
+ 
+    return $route;
+}
+add_filter( 'rest_route_for_post', 'course_update_rest_route_for_post', 10, 2 );
