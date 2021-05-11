@@ -130,6 +130,7 @@ function create_update_cpt() {
     'hierarchical' => false,
     'exclude_from_search' => false,
     'show_in_rest' => true,
+    'rest_base' => 'update',
     'publicly_queryable' => true,
     'capability_type' => 'post',
     'menu_icon' => 'dashicons-universal-access-alt',
