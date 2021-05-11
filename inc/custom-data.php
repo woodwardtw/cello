@@ -153,24 +153,24 @@ function course_update_rest_route_for_post( $route, $post ) {
 }
 add_filter( 'rest_route_for_post', 'course_update_rest_route_for_post', 10, 2 );
 
-add_action( 'rest_api_init', 'register_experience_meta_fields');
-function register_experience_meta_fields(){
+add_action( 'rest_api_init', 'register_updates_meta_fields');
+function register_updates_meta_fields(){
 
-    register_meta( 'update', 'good', array(
+    register_meta( 'update', 'going_well', array(
         'type' => 'string',
         'description' => 'good stuff',
         'single' => true,
         'show_in_rest' => true
     ));
 
-    register_meta( 'update', 'flag', array(
+    register_meta( 'update', 'flags', array(
         'type' => 'string',
         'description' => 'flags',
         'single' => true,
         'show_in_rest' => true
     ));
 
-    register_meta( 'update', 'other', array(
+    register_meta( 'update', 'else', array(
         'type' => 'string',
         'description' => 'other information',
         'single' => true,
