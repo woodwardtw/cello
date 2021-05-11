@@ -156,12 +156,18 @@ add_filter( 'rest_route_for_post', 'course_update_rest_route_for_post', 10, 2 );
 add_action( 'rest_api_init', 'register_updates_meta_fields');
 function register_updates_meta_fields(){
 
-    register_meta( 'update', 'going_well', array(
-        'type' => 'string',
-        'description' => 'good stuff',
-        'single' => true,
-        'show_in_rest' => true
-    ));
+    // register_meta( 'update', 'going_well', array(
+    //     'type' => 'string',
+    //     'description' => 'good stuff',
+    //     'single' => true,
+    //     'show_in_rest' => true
+    // ));
+    register_meta('post', 'going_well', [
+      'type' => 'string',
+      'description' => 'going well',
+      'single' => true,
+      'show_in_rest' => true,
+    ]);
 
     register_meta( 'update', 'flags', array(
         'type' => 'string',
