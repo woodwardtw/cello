@@ -178,3 +178,7 @@ function register_updates_meta_fields(){
     ));
 
 }
+
+//show custom fields
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
