@@ -143,7 +143,7 @@ function create_update_cpt() {
 }
 add_action( 'init', 'create_update_cpt', 0 );
 
-
+//ADD ROUTE FOR UPDATE CPT
 function course_update_rest_route_for_post( $route, $post ) {
     if ( $post->post_type === 'update' ) {
         $route = '/wp/v2/update/' . $post->ID;
@@ -152,3 +152,29 @@ function course_update_rest_route_for_post( $route, $post ) {
     return $route;
 }
 add_filter( 'rest_route_for_post', 'course_update_rest_route_for_post', 10, 2 );
+
+add_action( 'rest_api_init', 'register_experience_meta_fields');
+function register_experience_meta_fields(){
+
+    register_meta( 'update', 'good', array(
+        'type' => 'string',
+        'description' => 'good stuff',
+        'single' => true,
+        'show_in_rest' => true
+    ));
+
+    register_meta( 'update', 'flag', array(
+        'type' => 'string',
+        'description' => 'flags',
+        'single' => true,
+        'show_in_rest' => true
+    ));
+
+    register_meta( 'update', 'other', array(
+        'type' => 'string',
+        'description' => 'other information',
+        'single' => true,
+        'show_in_rest' => true
+    ));
+
+}
