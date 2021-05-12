@@ -11,7 +11,11 @@ defined( 'ABSPATH' ) || exit;
 
 function the_instructional_designer(){
 	$designer = get_field('lead_instructional_designer');
-	return $designer['display_name'];
+	if(get_field('lead_instructional_designer')){
+			return $designer['display_name'];
+	} else {
+		return 'No one assigned yet.';
+	}
 }
 
 function the_google_folder(){
