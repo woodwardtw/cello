@@ -14,7 +14,7 @@ function the_instructional_designer(){
 	if(get_field('lead_instructional_designer')){
 			return $designer['display_name'];
 	} else {
-		return 'No one assigned yet.';
+		return 'No one has been assigned yet.';
 	}
 }
 
@@ -24,7 +24,7 @@ function the_google_folder(){
 		$id = str_replace('https://drive.google.com/drive/folders/', '', $url);
 	return '<iframe src="https://drive.google.com/embeddedfolderview?id='.$id.'#list" width="100%" height="200" frameborder="0"></iframe>';
 	} else {
-		return 'No associated folder found.';
+		return 'No associated folder provided.';
 	}
 
 }

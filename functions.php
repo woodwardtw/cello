@@ -68,6 +68,7 @@ function updates_query_loop($tag){
 	                      	$date = get_the_date( 'l F j, Y' );
 	                        $html .= "<div class='update'><div class='date'>{$date}</div><div class='well'>{$well}</div><div class='flags'>{$flags}</div><div class='else'>{$else}</div></div>";
 	                         endwhile;
+	                    else: $html = "No updates yet.";
 	                  endif;
 	            wp_reset_query();  // Restore global post data stomped by the_post().
 	   return $html;
@@ -131,7 +132,10 @@ if (!empty($categories)):
 	                         $link = get_the_permalink();
 	                        $html .= "<div class='home-card-title'><a href='{$link}'>{$title}</a></div>";
 	                         endwhile;
+	                        else:
+	              			$html .= "<div class='col-md-4'>No courses posted yet.";
 	                  endif;
+
 	            wp_reset_query();  // Restore global post data stomped by the_post().
 	   echo $html . '</div>';
 	   wp_reset_postdata(); // reset the query 
