@@ -16,20 +16,35 @@ function the_instructional_designer(){
 
 function the_google_folder(){
 	$url = get_field('link_to_shared_drive');
-	$id = str_replace('https://drive.google.com/drive/folders/', '', $url);
+	if($url){
+		$id = str_replace('https://drive.google.com/drive/folders/', '', $url);
 	return '<iframe src="https://drive.google.com/embeddedfolderview?id='.$id.'#list" width="100%" height="200" frameborder="0"></iframe>';
+	} else {
+		return 'No associated folder found.'
+	}
+
 }
 
 function the_notes(){
 	$url = get_field('link_to_notes_document');
 	$dir = get_stylesheet_directory_uri();
-	return "<div class='col-md-6 card-icon'><a href='{$url}'><img src='{$dir}/imgs/notes.svg' class='notes' alt='Clock icon.'><h3>Notes</h3></a></div>";
+	if($url){
+		return "<div class='col-md-6 card-icon'><a href='{$url}'><img src='{$dir}/imgs/notes.svg' class='notes' alt='Clock icon.'><h3>Notes</h3></a></div>";
+	} else {
+		return "<div class='col-md-6 card-icon'>No associated note link provided.</div>"
+	}
+
 }
 
 function the_timeline(){
 	$url = get_field('link_to_course_development_timeline');
 	$dir = get_stylesheet_directory_uri();
+	if($url){
 	return "<div class='col-md-6 card-icon'><a href='{$url}'><img src='{$dir}/imgs/time.svg' class='timeline' alt='Clock icon.'><h3>Timeline</h3></a></div>";
+	}else {
+		return "<div class='col-md-6 card-icon'>No associated timeline link provided.</div>"
+	}
+	
 }
 
 
