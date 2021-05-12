@@ -14,6 +14,9 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<div class="course-cat">
+			<?php echo show_card_categories();?>
+		</div>
 
 		<div class="entry-meta">
 
@@ -25,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="entry-content">
+	<div class="entry-content course">
 
 		<?php the_content(); ?>
 		<?php 

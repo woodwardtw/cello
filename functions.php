@@ -139,3 +139,13 @@ if (!empty($categories)):
 endif;
 
 }
+
+
+//card category
+
+function show_card_categories(){
+	$cats = get_the_category();
+	if ( ! empty( $cats ) ) {
+    return '<a href="' . esc_url( get_category_link( $cats[0]->term_id ) ) . '">Program: ' . esc_html( $cats[0]->name ) . '</a>';
+	}
+}

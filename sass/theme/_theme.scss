@@ -66,27 +66,6 @@ h1,h2,h3,h4,h5,h6 {
 	background-color: #efefef;
 }
 
-.entry-content .card-icon img {
-	display: inline-block;
-	float: left;
-	height: 35px;
-	width: 35px;
-	margin: 0 20px 0 0;
-}
-
-
-// .update-scroller {
-// 	height: 120px;
-// 	overflow-y: scroll;
-// }
-
-.entry-content .hero-img {
-	display: block;
-    float: left;
-    height: 35px;
-    width: 35px;
-    margin: 0;
-}
 
 
 .update-box {
@@ -154,6 +133,45 @@ h1,h2,h3,h4,h5,h6 {
 	background-size: cover;
 }
 
+/*card*/
+.course-cat {
+	font-size: 1.5em;
+	font-weight: 200;
+	color: #424242;
+	margin: 12px 0;
+}
+
+.course-cat a {
+	background-color: #efefef;
+	padding: 5px;
+	border-radius: 4px;
+}
+
+
+.course .card-icon img {
+	display: inline-block;
+	float: left;
+	height: 35px;
+	width: 35px;
+	margin: 0 20px 0 0;
+}
+
+
+// .update-scroller {
+// 	height: 120px;
+// 	overflow-y: scroll;
+// }
+
+.course .hero-img {
+	display: block;
+    float: left;
+    height: 35px;
+    width: 35px;
+    margin: 0 5px 0 0;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 4px;
+}
 
 
 /*general*/
