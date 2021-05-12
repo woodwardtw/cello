@@ -132,8 +132,8 @@ if (!empty($categories)):
 	                         $link = get_the_permalink();
 	                        $html .= "<div class='home-card-title'><a href='{$link}'>{$title}</a></div>";
 	                         endwhile;
-	                        else:
-	              			$html .= "<div class='col-md-4'>No courses posted yet.";
+	                 //        else:
+	              			// $html .= "<div class='col-md-4'>No courses posted yet.";
 	                  endif;
 
 	            wp_reset_query();  // Restore global post data stomped by the_post().
