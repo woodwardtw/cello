@@ -127,7 +127,7 @@ if (!empty($categories)):
 	                      while ( $the_query->have_posts() ) : $the_query->the_post();
 	                       //DO YOUR THING	
 	                         if($the_query->current_post == 0) {
-	                         	$html .= "<div class='col-md-4'><h2>{$category->slug}</h2>";
+	                         	$html .= "<div class='col-md-4'><div class='card-bucket'><h2>{$category->slug}</h2>";
 	                         }                    	
 	                         $title = get_the_title();
 	                         $link = get_the_permalink();
@@ -138,7 +138,7 @@ if (!empty($categories)):
 	                  endif;
 
 	            wp_reset_query();  // Restore global post data stomped by the_post().
-	   echo $html . '</div>';
+	   echo $html . '</div></div>';
 	   wp_reset_postdata(); // reset the query 
     endforeach;
 endif;

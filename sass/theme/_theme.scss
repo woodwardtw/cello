@@ -34,6 +34,25 @@ h1 {
 	margin-bottom: 20px;
 }
 
+/*home*/
+.card-bucket {
+	padding: 20px;
+	border: 2px solid $light-blue;
+	border-radius: 9px;
+	height: 100%;
+}
+
+.card-bucket a {
+	margin: 5px 0;
+	display: block;	
+	padding: 3px 5px;
+	transition: all .4s;
+}
+
+.card-bucket a:hover{
+	background-color: $light-blue;
+}
+
 /*sidebar art*/
 #h-title {	
     transition: all 2s;   
