@@ -62,9 +62,10 @@ function updates_query_loop($tag){
 	                    if( $the_query->have_posts() ): 
 	                      while ( $the_query->have_posts() ) : $the_query->the_post();
 	                       //DO YOUR THING
-	                      	$well = get_field('going_well');
-	                      	$flags = get_field('flags');
-	                      	$else = get_field('else');
+	                      	//echo ($requestVars->_name == '') ? $redText : ''
+	                      	$well = (get_field('going_well')) ? get_field('going_well') : 'N/A';
+	                      	$flags = (get_field('flags')) ? get_field('flags') : 'N/A';
+	                      	$else = (get_field('else')) ? get_field('else') : 'N/A';
 	                      	$date = get_the_date( 'l F j, Y' );
 	                        $html .= "<div class='update'><div class='date'>{$date}</div><div class='well'>{$well}</div><div class='flags'>{$flags}</div><div class='else'>{$else}</div></div>";
 	                         endwhile;

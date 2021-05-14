@@ -33,7 +33,7 @@ function the_notes(){
 	$url = get_field('link_to_notes_document');
 	$dir = get_stylesheet_directory_uri();
 	if($url){
-		return "<div class='col-md-6 card-icon'><a href='{$url}'><img src='{$dir}/imgs/notes.svg' class='notes' alt='Clock icon.'><h3>Notes</h3></a></div>";
+		return "<div class='col-md-6 card-icon'><a href='{$url}' class='btn btn-cello'><img src='{$dir}/imgs/notes_white.svg' class='notes' alt='Clock icon.'><h3>Notes</h3></a></div>";
 	} else {
 		return "<div class='col-md-6 card-icon'>No associated note link provided.</div>";
 	}
@@ -44,7 +44,7 @@ function the_timeline(){
 	$url = get_field('link_to_course_development_timeline');
 	$dir = get_stylesheet_directory_uri();
 	if($url){
-	return "<div class='col-md-6 card-icon'><a href='{$url}'><img src='{$dir}/imgs/time.svg' class='timeline' alt='Clock icon.'><h3>Timeline</h3></a></div>";
+	return "<div class='col-md-6 card-icon'><a href='{$url}' class='btn btn-cello'><img src='{$dir}/imgs/time.svg' class='timeline' alt='Clock icon.'><h3>Timeline</h3></a></div>";
 	}else {
 		return "<div class='col-md-6 card-icon'>No associated timeline link provided.</div>";
 	}
