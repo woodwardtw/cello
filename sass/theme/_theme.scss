@@ -42,12 +42,20 @@ h1 {
 	height: 100%;
 }
 
+.card-bucket h2 {
+	color: $primary;
+	text-align: center;
+    text-transform: uppercase;
+}
+
 .card-bucket a {
 	margin: 5px 0;
 	display: block;	
 	padding: 3px 5px;
 	transition: all .4s;
+	border-bottom: 1px solid #efefef;
 }
+
 
 .card-bucket a:hover{
 	background-color: $light-blue;
