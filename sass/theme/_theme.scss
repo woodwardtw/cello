@@ -35,12 +35,16 @@ h1 {
 }
 
 /*home*/
+
+.home-cards-row .col-md-4 {
+	margin-bottom: 20px;
+}
+
 .card-bucket {
 	padding: 20px;
 	border: 2px solid $light-blue;
 	border-radius: 9px;
 	height: 100%;
-	margin-bottom: 20px;
 }
 
 .card-bucket h2 {
