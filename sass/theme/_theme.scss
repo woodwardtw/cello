@@ -66,6 +66,16 @@ h1 {
 	background-color: $light-blue;
 }
 
+.update-count {
+	height: 25px;
+	padding: 0 4px;
+	border-radius: 10px;
+	background-color: $teal;
+	color: #fff;
+	display: inline-block;
+	margin-left: 10px;
+}
+
 /*sidebar art*/
 #h-title {	
     transition: all 2s;   

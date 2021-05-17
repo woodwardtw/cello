@@ -131,7 +131,10 @@ if (!empty($categories)):
 	                         }                    	
 	                         $title = get_the_title();
 	                         $link = get_the_permalink();
-	                        $html .= "<div class='home-card-title'><a href='{$link}'>{$title}</a></div>";
+	                         $slug = get_post_field( 'post_name', get_post());
+
+	                        $count = update_count($slug);
+	                        $html .= "<div class='home-card-title'><a href='{$link}'>{$title}<div class='update-count'>{$count}</div></a></div>";
 	                         endwhile;
 	                 //        else:
 	              			// $html .= "<div class='col-md-4'>No courses posted yet.";
@@ -143,6 +146,17 @@ if (!empty($categories)):
     endforeach;
 endif;
 
+}
+
+function update_count($slug){
+	if(get_term_by('slug', $slug, 'post_tag')){
+		$tag = get_term_by('slug', $slug, 'post_tag');
+		$count = $tag->count;
+		return $count;
+	} else {
+		return 0;
+	}
+	
 }
 
 
