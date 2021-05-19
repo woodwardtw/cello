@@ -22,6 +22,7 @@ function the_google_folder(){
 	$url = get_field('link_to_shared_drive');
 	if($url){
 		$id = str_replace('https://drive.google.com/drive/folders/', '', $url);
+		$id = explode('?',$id)[0];//clean any parameters up
 	return '<iframe src="https://drive.google.com/embeddedfolderview?id='.$id.'#list" width="100%" height="200" frameborder="0"></iframe>';
 	} else {
 		return 'No associated folder provided.';
