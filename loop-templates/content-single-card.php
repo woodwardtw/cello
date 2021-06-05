@@ -48,7 +48,7 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 		</div>
 
-		<?php //update_form_creation(get_the_title());?>
+		<?php update_form_creation(get_the_title());?>
 
 		<?php
 		wp_link_pages(
