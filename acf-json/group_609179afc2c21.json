@@ -39,22 +39,6 @@
             "return_format": "array"
         },
         {
-            "key": "field_609179db45670",
-            "label": "Link to shared drive",
-            "name": "link_to_shared_drive",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_609179e7afac0",
             "label": "Link to course development timeline",
             "name": "link_to_course_development_timeline",
@@ -141,5 +125,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1620147016
+    "show_in_rest": 0,
+    "modified": 1641570949
 }

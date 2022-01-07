@@ -39,8 +39,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php echo the_notes();?>
 			<?php echo the_timeline();?>
 		</div>
-		<h3>Shared Drive</h3>
-		<?php echo the_google_folder();?>
+		
 		<div class="update-box">
 			<h3>Updates</h3>
 			<div class="update-scroller">
