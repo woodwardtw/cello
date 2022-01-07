@@ -121,6 +121,7 @@ if (!empty($categories)):
       'post_status' => 'publish', 
       'nopaging' => true,
       'cat' => $category->term_id,
+      'tag__not_in' => array(44),//tag id for 'done'
                     );
 	  $the_query = new WP_Query( $args );
 	                    if( $the_query->have_posts() ): 
