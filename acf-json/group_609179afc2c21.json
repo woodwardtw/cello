@@ -120,11 +120,10 @@
         "page_attributes",
         "featured_image",
         "categories",
-        "tags",
         "send-trackbacks"
     ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641570949
+    "modified": 1641576284
 }
