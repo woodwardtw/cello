@@ -169,3 +169,24 @@ function show_card_categories(){
     return '<a href="' . esc_url( get_category_link( $cats[0]->term_id ) ) . '">Program: ' . esc_html( $cats[0]->name ) . '</a>';
 	}
 }
+
+//change slug on cards if title is changed
+add_action('acf/save_post', 'cell_card_title_fix');
+function cell_card_title_fix( $post_id ) {
+	if(get_post_type($post_id)== "card"){
+		$post = get_post($post_id);
+		$title = $post->post_title;
+		$clean_title = sanitize_title($title);
+		$slug = $post->post_name;
+		if($slug != $clean_title){
+			 $clean_post = array(
+		      'ID'           => $post_id,
+		      'post_name'   => $clean_title,
+		  );
+		 
+		// Update the post into the database
+		  wp_update_post( $clean_post );
+		}
+
+	}
+}
