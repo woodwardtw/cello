@@ -129,15 +129,18 @@ if (!empty($categories)):
 	                       //DO YOUR THING	
 	                         if($the_query->current_post == 0) {
 	                         	$html .= "<div class='col-md-4'>
-	                         				<div class='card-bucket'><h2>{$category->slug}</h2>";
-	                         }                    	
-	                         $title = get_the_title();
-	                         $link = get_the_permalink();
-	                         $slug = get_post_field( 'post_name', get_post());
+	                         				<div class='card-bucket'>
+	                         					<h2>{$category->category_nicename}</h2>";
+	                         		}                    	
+			                         $title = get_the_title();
+			                         $link = get_the_permalink();
+			                         $slug = get_post_field( 'post_name', get_post());
 
-	                        $count = update_count($slug);
+		                        	$count = update_count($slug);
 	                        $html .= "<div class='home-card-title'>
-	                        			<a href='{$link}'>{$title}<div class='update-count'>{$count}</div>
+	                        			<a href='{$link}'>
+	                        				{$title}
+	                        				<div class='update-count'>{$count}</div>
 	                        			</a>
 	                        		</div>";
 	                         endwhile;
