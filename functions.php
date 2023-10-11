@@ -128,14 +128,18 @@ if (!empty($categories)):
 	                      while ( $the_query->have_posts() ) : $the_query->the_post();
 	                       //DO YOUR THING	
 	                         if($the_query->current_post == 0) {
-	                         	$html .= "<div class='col-md-4'><div class='card-bucket'><h2>{$category->slug}</h2>";
+	                         	$html .= "<div class='col-md-4'>
+	                         				<div class='card-bucket'><h2>{$category->slug}</h2>";
 	                         }                    	
 	                         $title = get_the_title();
 	                         $link = get_the_permalink();
 	                         $slug = get_post_field( 'post_name', get_post());
 
 	                        $count = update_count($slug);
-	                        $html .= "<div class='home-card-title'><a href='{$link}'>{$title}<div class='update-count'>{$count}</div></a></div>";
+	                        $html .= "<div class='home-card-title'>
+	                        			<a href='{$link}'>{$title}<div class='update-count'>{$count}</div>
+	                        			</a>
+	                        		</div>";
 	                         endwhile;
 	                 //        else:
 	              			// $html .= "<div class='col-md-4'>No courses posted yet.";
