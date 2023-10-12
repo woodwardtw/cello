@@ -113,8 +113,8 @@ function the_home_cards(){
 	$categories = get_categories($args_cat);
 
 if (!empty($categories)):
-    foreach ($categories as $category):
-	$html = '';
+    foreach ($categories as $category){
+    	$html = '';
 	 $args = array(
       'posts_per_page' => -1,
       'post_type'   => 'card', 
@@ -127,7 +127,7 @@ if (!empty($categories)):
 	                    if( $the_query->have_posts() ): 
 	                      while ( $the_query->have_posts() ) : $the_query->the_post();
 	                       //DO YOUR THING	
-	                         if($the_query->current_post == 0) {
+	                         if($the_query->current_post === 0) {
 	                         	$html .= "<div class='col-md-4'>
 	                         				<div class='card-bucket'>
 	                         					<h2>{$category->category_nicename}</h2>";
@@ -142,17 +142,19 @@ if (!empty($categories)):
 	                        				{$title}
 	                        				<div class='update-count'>{$count}</div>
 	                        			</a>
-	                        		</div>";
+	                        		 </div>";
 	                         endwhile;
 	                 //        else:
-	              			// $html .= "<div class='col-md-4'>No courses posted yet.";
+	              			$html .= "</div></div>";
 	                  endif;
 
-	            wp_reset_query();  // Restore global post data stomped by the_post().
-	   echo $html . '</div></div>';
+	   echo $html;
 	   wp_reset_postdata(); // reset the query 
-    endforeach;
+
+    }
+	
 endif;
+    wp_reset_query();  // Restore global post data stomped by the_post().
 
 }
 
